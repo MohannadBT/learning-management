@@ -50,7 +50,7 @@ export const createCourse = async (
   try {
     const { teacherId, teacherName } = req.body;
 
-    if (teacherId || teacherName) {
+    if (!teacherId || !teacherName) {
       res.status(404).json({
         Message: "Teacher Id and name are required",
       });
